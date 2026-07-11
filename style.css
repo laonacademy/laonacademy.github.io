@@ -1,0 +1,84 @@
+ body {
+            font-family: 'Malgun Gothic', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        h1, h2 {
+            font-family: 'Noto Serif KR', 'Batang', serif;
+            color: #1a3a6e;
+        }
+        h2 {
+            border-bottom: 2px solid #1a3a6e;
+            padding-bottom: 8px;
+        }
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .poster {
+            width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+        .btn-call {
+            display: inline-block;
+            background-color: #1a3a6e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h3 {
+            color: #8b0000;
+            margin-top: 24px;
+        }
+        ol {
+            background-color: #f5f7fa;
+            padding: 16px 16px 16px 48px;
+            border-radius: 8px;
+        }
+       .card-box {
+            display: flex;
+            gap: 16px;
+        }
+        .card {
+            flex: 1;
+            background-color: #f5f7fa;
+            border-radius: 8px;
+            padding: 16px;
+        }
+         @media (max-width: 600px) {
+            .card-box {
+                flex-direction: column;
+            }
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 24px;
+        }
+        nav a {
+            color: #1a3a6e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .map {
+    aspect-ratio: 4 / 3;
+    border: 0;
+}
+.form {
+    aspect-ratio: auto;
+    height: 900px;
+    border: 0;
+}
