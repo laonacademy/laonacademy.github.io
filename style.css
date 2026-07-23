@@ -7,10 +7,10 @@
         }
         h1, h2 {
             font-family: 'Noto Serif KR', 'Batang', serif;
-            color: #1a3a6e;
+            color:#8b0000
         }
         h2 {
-            border-bottom: 2px solid #1a3a6e;
+            border-bottom: 2px solid #8b0000;
             padding-bottom: 8px;
         }
         iframe {
@@ -30,7 +30,7 @@
         }
         .btn-call {
             display: inline-block;
-            background-color: #1a3a6e;
+            background-color:#1a3a6e;
             color: white;
             padding: 12px 24px;
             border-radius: 8px;
@@ -69,7 +69,7 @@
             margin-bottom: 24px;
         }
         nav a {
-            color: #1a3a6e;
+            color: #8b0000;
             text-decoration: none;
             font-weight: bold;
         }
