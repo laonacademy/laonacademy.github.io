@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,18 +64,38 @@ button {
 const btn = document.getElementById('btn-fortune');
         const result = document.getElementById('result');
 
-        btn.addEventListener('click', function () {
+        btn.addEventListener('click', async function () {
             const name = document.getElementById('name').value;
             const birth = document.getElementById('birth').value;
 
+            if (!birth) {
+                alert('생년월일을 입력해 주세요');
+                return;
+            }
+
             result.hidden = false;
             result.innerHTML = '<p>괘를 뽑고 있습니다…</p>';
+            btn.disabled = true;
 
-            setTimeout(function () {
-                result.innerHTML =
-                    '<h2>오늘의 괘: 지천태(泰)</h2>' +
-                    '<p>' + name + '님(' + birth + '생), 하늘과 땅이 통하니 막힌 일이 풀리는 날입니다.</p>';
-            }, 2000);
+            try {
+                const response = await fetch('https://laonacademy-github-io-cjd90059-9576s-projects.vercel.app/api/fortune', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, birth: birth })
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    result.innerHTML = '<p>' + data.error + '</p>';
+                } else {
+                    result.innerHTML = '<p>' + data.fortune.replace(/\n/g, '<br>') + '</p>';
+                }
+            } catch (err) {
+                result.innerHTML = '<p>연결에 실패했습니다. 잠시 후 다시 시도해 주세요.</p>';
+            }
+
+            btn.disabled = false;
         });
     </script>
 </body>
